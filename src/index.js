@@ -21,6 +21,8 @@ mongoose.connection.on('connected', () => {
 app.use('/posts', require('./routes/posts'))
 app.use('/auth', require('./routes/auth'))
 
-app.listen(3004, () => {
-  console.log("Server is running on http://localhost:3004")
+const PORT = process.env.PORT ?? 3004
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`)
 })
